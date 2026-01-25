@@ -14,6 +14,7 @@ public class PassUI : MonoBehaviour
     private void Start()
     {
         PlayerInteract.Instance.OnGoal += PlayerInteract_OnGoal;
+        PlayerInteract.Instance.OnDead += PlayerInteract_OnDead;
         Hide();
     }
 
@@ -27,18 +28,17 @@ public class PassUI : MonoBehaviour
 
     private void PlayerInteract_OnGoal(object sender, PlayerInteract.OnGoalEventArgs e)
     {
-        if (e.passingType == PlayerInteract.PassingType.Success)
-        {
-            titleTextMesh.text = "YOU ESCAPED";
-            playButtonTextMesh.text = "CONTINUE";
-            playButtonClickAction = GameManager.Instance.GoToNextLevel;
-        }
-        else
-        {
-            titleTextMesh.text = "YOU ARE DEAD";
-            playButtonTextMesh.text = "WAKE UP";
-            playButtonClickAction = GameManager.Instance.RetryLevel;
-        }
+        titleTextMesh.text = "YOU ESCAPED";
+        playButtonTextMesh.text = "CONTINUE";
+        playButtonClickAction = GameManager.Instance.GoToNextLevel;
+        Show();
+    }
+
+    private void PlayerInteract_OnDead(object sender, EventArgs e)
+    {
+        titleTextMesh.text = "YOU ARE DEAD";
+        playButtonTextMesh.text = "WAKE UP";
+        playButtonClickAction = GameManager.Instance.RetryLevel;
         Show();
     }
 

@@ -3767,7 +3767,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManagerVisual
   pickupCinemachineImpulseSource: {fileID: 1449120480}
   pickupCollectVfxPrefab: {fileID: 2001881624417100563, guid: 1a75230dbbc84974a947bd55e27a640b, type: 3}
-  confettiVfxPrefab: {fileID: 0}
+  confettiVfxPrefab: {fileID: 455836772935661875, guid: c1affd26b8bfb5e419fd833b2598c34c, type: 3}
 --- !u!1 &1449120477
 GameObject:
   m_ObjectHideFlags: 0
@@ -3779,7 +3779,6 @@ GameObject:
   - component: {fileID: 1449120479}
   - component: {fileID: 1449120478}
   - component: {fileID: 1449120480}
-  - component: {fileID: 1449120481}
   m_Layer: 0
   m_Name: CinemachineCameraShake2D
   m_TagString: Untagged
@@ -3869,28 +3868,6 @@ MonoBehaviour:
     DissipationDistance: 100
     PropagationSpeed: 343
   DefaultVelocity: {x: 0, y: -1, z: 0}
---- !u!95 &1449120481
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1449120477}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 976f649e279075c40a16f222ab7bb8e7, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1460722297
 GameObject:
   m_ObjectHideFlags: 0
@@ -4160,9 +4137,9 @@ Transform:
   m_GameObject: {fileID: 1718609912}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0587, y: 0.16, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: -0.07, y: 0.14, z: 0}
+  m_LocalScale: {x: 0.07, y: 0.07, z: 0.07}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1940565221}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4178,6 +4155,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SoundManager
       objectReference: {fileID: 0}
+    - target: {fileID: 6492641844368859683, guid: 3a5011cf21bf56247bb3fe6f35c52fdd, type: 3}
+      propertyPath: failAudioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: f7148206dc4cb414bb7ae940e011a912, type: 3}
+    - target: {fileID: 6492641844368859683, guid: 3a5011cf21bf56247bb3fe6f35c52fdd, type: 3}
+      propertyPath: successAudioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 5e811af3a891aae419753de3094e5aa3, type: 3}
     - target: {fileID: 8415520046571918035, guid: 3a5011cf21bf56247bb3fe6f35c52fdd, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.2071
@@ -4721,7 +4706,7 @@ MonoBehaviour:
   _groundCheckSize: {x: 0.49, y: 0.03}
   _fromWallCheckPoint: {fileID: 1718609913}
   _backWallCheckPoint: {fileID: 2104379886}
-  _wallCheckSize: {x: 0.5, y: 1}
+  _wallCheckSize: {x: 0.1, y: 0.3}
   _groundLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -5227,9 +5212,9 @@ Transform:
   m_GameObject: {fileID: 2104379885}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0584, y: 0.16, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0.07, y: 0.14, z: 0}
+  m_LocalScale: {x: 0.07, y: 0.07, z: 0.07}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1940565221}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -31,16 +31,10 @@ public class PlayerInteract : MonoBehaviour
 
     public class OnGoalEventArgs : EventArgs
     {
-        public PassingType passingType;
+        public bool passing;
         public int score;
         public Goal goal;
 }
-
-    public enum PassingType
-    {
-        Success,
-        Fail
-    }
 
     public enum State
     {
@@ -66,13 +60,9 @@ public class PlayerInteract : MonoBehaviour
     {
         if (time <= 0f && state != State.GameOver)
         {
-            OnGoal?.Invoke(this, new OnGoalEventArgs
-            {
-                passingType = PassingType.Fail,
-                score = (int)coinPickups
-            });
+            OnDead?.Invoke(this, EventArgs.Empty);
+
             SetState(State.GameOver);
-            DestroySelf();
             return;
         }
 
@@ -117,7 +107,7 @@ public class PlayerInteract : MonoBehaviour
         {
             OnGoal?.Invoke(this, new OnGoalEventArgs
             {
-                passingType = PassingType.Success,
+                passing = true,
                 score = (int)coinPickups,
                 goal = goal
             });
@@ -166,11 +156,6 @@ public class PlayerInteract : MonoBehaviour
         return coinPickups;
     }
 
-    private void DestroySelf()
-    {
-        Destroy(gameObject);
-    }
-
     public float GetExactTime()
     {
         return time;
@@ -192,12 +177,6 @@ public class PlayerInteract : MonoBehaviour
         if (state != State.GameOver)
         {
             OnDead?.Invoke(this, EventArgs.Empty);
-            OnGoal?.Invoke(this, new OnGoalEventArgs
-            {
-                passingType = PassingType.Fail,
-                score = (int)coinPickups
-            });
-
             SetState(State.GameOver);
         }
     }

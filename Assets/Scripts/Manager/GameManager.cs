@@ -23,7 +23,6 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-        DontDestroyOnLoad(gameObject);
     }
 
     private void Start()
@@ -32,7 +31,7 @@ public class GameManager : MonoBehaviour
         PlayerInteract.Instance.OnGoal += Player_OnGoal;
         PlayerInteract.Instance.OnStateChanged += Player_OnStateChanged;
 
-        //GameInput.Instance.OnMenuButtonPressed += GameInput_OnMenuButtonPressed;
+        GameInput.Instance.OnMenuButtonPressed += GameInput_OnMenuButtonPressed;
         LoadCurrentLevel();
     }
 
